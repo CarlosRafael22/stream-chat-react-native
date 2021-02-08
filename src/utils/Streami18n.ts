@@ -13,6 +13,7 @@ import itTranslations from '../i18n/it.json';
 import nlTranslations from '../i18n/nl.json';
 import ruTranslations from '../i18n/ru.json';
 import trTranslations from '../i18n/tr.json';
+import ptBrTranslations from '../i18n/pt-br.json';
 
 const defaultNS = 'translation';
 const defaultLng = 'en';
@@ -23,6 +24,7 @@ import 'dayjs/locale/it';
 import 'dayjs/locale/nl';
 import 'dayjs/locale/ru';
 import 'dayjs/locale/tr';
+import 'dayjs/locale/pt-br';
 
 /**
  * These locale imports also set these locales globally.
@@ -137,6 +139,17 @@ Dayjs.updateLocale('ru', {
   },
 });
 
+Dayjs.updateLocale('pt-br', {
+  calendar: {
+    lastDay: '[Ontem às] LT',
+    lastWeek: 'dddd [passada] [às] LT',
+    nextDay: '[Amanhã às] LT',
+    nextWeek: 'dddd [às] LT',
+    sameDay: '[Hoje às] LT',
+    sameElse: 'L',
+  },
+});
+
 const en_locale = {
   formats: {},
   months: [
@@ -192,6 +205,7 @@ type Options = {
  * 5. French (fr)
  * 6. Italian (it)
  * 7. Hindi (hi)
+ * 8. Brazilian Portuguese (pt-br)
  *
  * Simplest way to start using chat components in one of the in-built languages would be following:
  *
@@ -358,6 +372,7 @@ export class Streami18n {
     nl: { [defaultNS]: nlTranslations },
     ru: { [defaultNS]: ruTranslations },
     tr: { [defaultNS]: trTranslations },
+    'pt-br': { [defaultNS]: ptBrTranslations },
   };
 
   /**
